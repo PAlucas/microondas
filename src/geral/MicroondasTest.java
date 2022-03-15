@@ -44,9 +44,26 @@ public class MicroondasTest {
     }
 
     @Test
-    void situacaoPorta(){
+    void estadoDoMicroondas(){
+        assertEquals(true, soSegundos.estado);
+    }
+
+    @Test
+    void desligarMicroondas(){
+        assertEquals(false, soSegundos.DesligarMicroondas());
+    }
+
+    @Test
+    void situacaoPortaSemDesligarMicroondas(){
         soSegundos.abrirPorta();
         assertEquals(false, soSegundos.situacaoPorta);
+    }
+
+    @Test
+    void situacaoPortaComMicroondasDesligado(){
+        soSegundos.DesligarMicroondas();
+        soSegundos.abrirPorta();
+        assertEquals(true, soSegundos.situacaoPorta);
     }
 
 

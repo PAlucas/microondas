@@ -11,6 +11,7 @@ public class Microondas {
     private void init(int minutos, int segundos){
         this.minutos = minutos;
         this.segundos = segundos;
+        this.estado = true;
     }
 
     /**
@@ -60,14 +61,23 @@ public class Microondas {
         }
     }
     /**
+     * Função que desliga o microondas
+     * @return estado bool que fornece se o microondas está ligado ou desligado.
+     */
+    public Boolean DesligarMicroondas(){
+        this.estado = false;
+        return this.estado;
+    }
+
+    /**
      * Função que abre porta
      * @return situacaoPorta bool que fornece se a porta está fechada ou aberta.
      */
     public Boolean abrirPorta(){
         if(estado == false){
-            situacaoPorta = true;
+            this.situacaoPorta = true;
         }
-        return situacaoPorta;
+        return this.situacaoPorta;
     }
 
     /**
